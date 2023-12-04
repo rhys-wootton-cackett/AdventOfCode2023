@@ -58,9 +58,10 @@ namespace Day4
         static void PartTwo()
         {
             var cardInputs = File.ReadAllLines("input.txt")
-            .Select(input => input[10..])
-            .Select(input => input.Split("|"))
-            .ToArray();
+                                .Select(input => input[10..])
+                                .Select(input => input.Split("|"))
+                                .ToArray();
+
             var cardCounts = new int[cardInputs.Length].Select(x => x = 1).ToArray();
 
             for (int i = 0; i < cardInputs.Length; i++)
