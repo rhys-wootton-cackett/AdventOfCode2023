@@ -61,17 +61,18 @@ namespace Day4
             .Select(input => input[10..])
             .Select(input => input.Split("|"))
             .ToArray();
-            var cardCounts = new int[cardInputs.Count()].Select(x => x = 1).ToArray();
+            var cardCounts = new int[cardInputs.Length].Select(x => x = 1).ToArray();
 
             for (int i = 0; i < cardInputs.Length; i++)
             {
                 var numberOfIterations = 0;
+
+                var winningNumbers = cardInputs[i][0].Trim().Replace("  ", " ").Split(" ").Select(int.Parse).ToArray();
+                var scratchedNumbers = cardInputs[i][1].Trim().Replace("  ", " ").Split(" ").Select(int.Parse).ToArray();
+                var matchingNumbersCount = scratchedNumbers.Count(winningNumbers.Contains);
+
                 do
                 {
-                    var winningNumbers = cardInputs[i][0].Trim().Replace("  ", " ").Split(" ").Select(int.Parse).ToArray();
-                    var scratchedNumbers = cardInputs[i][1].Trim().Replace("  ", " ").Split(" ").Select(int.Parse).ToArray();
-                    var matchingNumbersCount = scratchedNumbers.Count(winningNumbers.Contains);
-
                     for (int j = 1; j <= matchingNumbersCount; j++)
                     {
                         if (i + j <= cardCounts.Length - 1)
