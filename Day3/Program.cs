@@ -4,10 +4,17 @@
     {
         static void Main(string[] args)
         {
-            //PartOne();
+            PartOne();
             PartTwo();
         }
 
+        /// <summary>
+        /// The engine schematic (your puzzle input) consists of a visual representation of the engine. There are lots of numbers and symbols 
+        /// you don't really understand, but apparently any number adjacent to a symbol, even diagonally, is a "part number" and should be included 
+        /// in your sum. (Periods (.) do not count as a symbol.)
+        /// 
+        /// What is the sum of all of the part numbers in the engine schematic?
+        /// </summary>
         static void PartOne()
         {
             var engineSchematic = File.ReadAllLines("input.txt").Select(x => x.ToCharArray()).ToArray();
@@ -44,6 +51,15 @@
             Console.WriteLine("PART ONE - Sum of all part numbers: " + sumOfValues);
         }
 
+        /// <summary>
+        /// The missing part wasn't the only issue - one of the gears in the engine is wrong. A gear is any * symbol that is adjacent to exactly 
+        /// two part numbers. Its gear ratio is the result of multiplying those two numbers together.
+        ///
+        /// This time, you need to find the gear ratio of every gear and add them all up so that the engineer can figure out which gear 
+        /// needs to be replaced.
+        /// 
+        /// What is the sum of all of the gear ratios in your engine schematic?
+        /// </summary>
         static void PartTwo()
         {
             var engineSchematic = File.ReadAllLines("input.txt").Select(x => x.ToCharArray()).ToArray();
