@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="fertilizer.txt" />
+    <None Remove="humidity.txt" />
+    <None Remove="input.txt" />
+    <None Remove="light.txt" />
+    <None Remove="location.txt" />
+    <None Remove="seeds.txt" />
+    <None Remove="soil.txt" />
+    <None Remove="temperature.txt" />
+    <None Remove="testInput.txt" />
+    <None Remove="water.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testInput.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
